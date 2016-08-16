@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,12 +15,12 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUH-rM-oOK">
-                                <rect key="frame" x="50" y="213" width="274" height="30"/>
+                                <rect key="frame" x="50" y="163" width="274" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MUH-rM-oOK" secondAttribute="height" multiplier="137:15" id="KBi-OG-axy"/>
                                 </constraints>
@@ -27,10 +28,11 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                 <connections>
                                     <action selector="primaryButtonAction:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="lUD-oG-oTW"/>
+                                    <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="dc7-uX-NCV"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKY-NI-eaE">
-                                <rect key="frame" x="50" y="170" width="38" height="21"/>
+                                <rect key="frame" x="20" y="120" width="38" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AKY-NI-eaE" secondAttribute="height" multiplier="38:21" id="5OR-FC-rGk"/>
                                 </constraints>
@@ -38,8 +40,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BookQuery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWn-7e-41w">
+                                <rect key="frame" x="122" y="81" width="131" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GWn-7e-41w" secondAttribute="height" multiplier="131:33" id="bl1-Gu-3pL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-3k-Zzl">
-                                <rect key="frame" x="50" y="261" width="48" height="21"/>
+                                <rect key="frame" x="20" y="235" width="48" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6r7-3k-Zzl" secondAttribute="height" multiplier="38:21" constant="10" id="m3p-yq-HN2"/>
                                 </constraints>
@@ -48,49 +59,51 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LfE-Ar-kQX">
-                                <rect key="frame" x="50" y="290" width="274" height="262"/>
+                                <rect key="frame" x="20" y="269" width="328" height="398"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BookQuery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWn-7e-41w">
-                                <rect key="frame" x="122" y="72" width="131" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="GWn-7e-41w" secondAttribute="height" multiplier="131:33" id="bl1-Gu-3pL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LfE-Ar-kQX" firstAttribute="trailing" secondItem="MUH-rM-oOK" secondAttribute="trailing" id="4A7-74-xlW"/>
-                            <constraint firstItem="LfE-Ar-kQX" firstAttribute="top" secondItem="6r7-3k-Zzl" secondAttribute="bottom" constant="8" symbolic="YES" id="6cd-7I-Voh"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LfE-Ar-kQX" secondAttribute="bottom" constant="115" id="8gq-qh-NLo"/>
-                            <constraint firstItem="6r7-3k-Zzl" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-72" id="9OD-Yh-1WO"/>
-                            <constraint firstItem="LfE-Ar-kQX" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-72" id="Cd3-Id-zoE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LfE-Ar-kQX" secondAttribute="trailing" constant="11" id="BNe-Ek-Ckx"/>
                             <constraint firstItem="MUH-rM-oOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CmX-LU-K3D"/>
                             <constraint firstItem="MUH-rM-oOK" firstAttribute="top" secondItem="AKY-NI-eaE" secondAttribute="bottom" constant="22" id="FD5-Mn-S42"/>
                             <constraint firstItem="GWn-7e-41w" firstAttribute="centerX" secondItem="MUH-rM-oOK" secondAttribute="centerX" id="T6W-hz-I6e"/>
-                            <constraint firstItem="AKY-NI-eaE" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-72" id="UaJ-ZX-24m"/>
-                            <constraint firstItem="AKY-NI-eaE" firstAttribute="leading" secondItem="MUH-rM-oOK" secondAttribute="leading" id="V8N-BI-ayl"/>
-                            <constraint firstItem="6r7-3k-Zzl" firstAttribute="top" secondItem="MUH-rM-oOK" secondAttribute="bottom" constant="18" id="ecd-82-pxo"/>
-                            <constraint firstItem="6r7-3k-Zzl" firstAttribute="width" secondItem="6r7-3k-Zzl" secondAttribute="height" multiplier="38:21" constant="10" id="mL2-ez-Cjc"/>
-                            <constraint firstItem="GWn-7e-41w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="nv8-o6-tZX"/>
-                            <constraint firstItem="AKY-NI-eaE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="o7d-4r-0J1"/>
+                            <constraint firstItem="AKY-NI-eaE" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-102" id="UaJ-ZX-24m"/>
+                            <constraint firstItem="AKY-NI-eaE" firstAttribute="leading" secondItem="MUH-rM-oOK" secondAttribute="leading" constant="-30" id="V8N-BI-ayl"/>
+                            <constraint firstItem="MUH-rM-oOK" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="30" id="W6b-Ln-gff"/>
+                            <constraint firstItem="LfE-Ar-kQX" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" id="eoa-1o-7q6"/>
+                            <constraint firstItem="MUH-rM-oOK" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-72" id="hew-ju-ayj"/>
+                            <constraint firstItem="GWn-7e-41w" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="102" id="j0y-RD-GY4"/>
+                            <constraint firstItem="LfE-Ar-kQX" firstAttribute="top" secondItem="6r7-3k-Zzl" secondAttribute="bottom" constant="13" id="jfx-kR-K4C"/>
+                            <constraint firstItem="GWn-7e-41w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="nv8-o6-tZX"/>
+                            <constraint firstItem="AKY-NI-eaE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="o7d-4r-0J1"/>
+                            <constraint firstItem="LfE-Ar-kQX" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="oMA-ij-utP"/>
                             <constraint firstItem="MUH-rM-oOK" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-72" id="p2P-Xu-XRN"/>
+                            <constraint firstItem="6r7-3k-Zzl" firstAttribute="top" secondItem="MUH-rM-oOK" secondAttribute="bottom" constant="42" id="r90-OU-Oyz"/>
+                            <constraint firstItem="6r7-3k-Zzl" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" id="tdy-LC-cfK"/>
+                            <constraint firstItem="AKY-NI-eaE" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-102" id="uip-bO-LeV"/>
                         </constraints>
+                        <connections>
+                            <action selector="backgroundTap:" destination="BYZ-38-t0r" eventType="touchDown" id="BG0-NH-PmL"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="PvH-ct-CLL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="isbnBook" destination="MUH-rM-oOK" id="4Gf-xA-EYx"/>
+                        <outlet property="textResult" destination="LfE-Ar-kQX" id="i3o-7e-36B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.5" y="389.5"/>
+            <point key="canvasLocation" x="953.5" y="371.5"/>
         </scene>
     </scenes>
 </document>

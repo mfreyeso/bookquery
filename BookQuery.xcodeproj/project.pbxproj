@@ -286,6 +286,7 @@
 				ACF7FA4D1D635D3100278D2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
