@@ -24,7 +24,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func primaryButtonAction(sender: AnyObject) {
         let isbn :String = isbnBook.text!
         if isbn != "" {
-            textResult.text = queryBookDetails(isbn)
+            if Reachability.isConnectedToNetwork() {
+                    textResult.text = queryBookDetails(isbn)
+            }else{
+                let alertController = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
+                    print("OK button tapped")
+                })
+                alertController.addAction(okAction)
+                
+                presentViewController(alertController, animated: true, completion: nil)
+            }
         }else{
             let alertController = UIAlertController(title: "Error", message: "You must write the ISBN code", preferredStyle: UIAlertControllerStyle.Alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
@@ -48,18 +58,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func queryBookDetails(isbn:String) -> String{
-        do{
-            let urls = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:" + isbn
-            let url = NSURL(string: urls)
-            let data:NSData? = NSData(contentsOfURL: url!)
-            let result = String(NSString(data: data!, encoding: NSUTF8StringEncoding)!)
-            return result
-        }
-        
-        
-        
+        let urls = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:" + isbn
+        let url = NSURL(string: urls)
+        let data:NSData? = NSData(contentsOfURL: url!)
+        let result = String(NSString(data: data!, encoding: NSUTF8StringEncoding)!)
+        return result
     }
-
 
 }
 
