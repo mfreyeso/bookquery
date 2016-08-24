@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC619DD91D6E129A00D1087A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC619DD81D6E129A00D1087A /* Book.swift */; };
 		ACAB0CC61D6677DE00E1AE66 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB0CC51D6677DE00E1AE66 /* Reachability.swift */; };
 		ACF7FA3D1D635D3100278D2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7FA3C1D635D3100278D2F /* AppDelegate.swift */; };
 		ACF7FA3F1D635D3100278D2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7FA3E1D635D3100278D2F /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC619DD81D6E129A00D1087A /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		ACAB0CC51D6677DE00E1AE66 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		ACF7FA391D635D3100278D2F /* BookQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF7FA3C1D635D3100278D2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				ACF7FA451D635D3100278D2F /* LaunchScreen.storyboard */,
 				ACF7FA481D635D3100278D2F /* Info.plist */,
 				ACAB0CC51D6677DE00E1AE66 /* Reachability.swift */,
+				AC619DD81D6E129A00D1087A /* Book.swift */,
 			);
 			path = BookQuery;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC619DD91D6E129A00D1087A /* Book.swift in Sources */,
 				ACF7FA3F1D635D3100278D2F /* ViewController.swift in Sources */,
 				ACF7FA3D1D635D3100278D2F /* AppDelegate.swift in Sources */,
 				ACAB0CC61D6677DE00E1AE66 /* Reachability.swift in Sources */,

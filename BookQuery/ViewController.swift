@@ -11,7 +11,11 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var isbnBook: UITextField!
-    @IBOutlet weak var textResult: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var pagesLabel: UILabel!
+    @IBOutlet weak var coverLabel: UILabel!
+    
     
     @IBAction func textFieldDoneEditing(sender:UITextField){
         sender.resignFirstResponder()
@@ -25,7 +29,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let isbn :String = isbnBook.text!
         if isbn != "" {
             if Reachability.isConnectedToNetwork() {
-                    textResult.text = queryBookDetails(isbn)
+                // let BookResult: Book = queryBookDetails(isbn)
+                queryBookDetails(isbn)
+                //renderResults(BookResult)
             }else{
                 let alertController = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
                 let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
@@ -57,12 +63,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func queryBookDetails(isbn:String) -> String{
+    func queryBookDetails(isbn:String){
         let urls = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:" + isbn
         let url = NSURL(string: urls)
         let data:NSData? = NSData(contentsOfURL: url!)
-        let result = String(NSString(data: data!, encoding: NSUTF8StringEncoding)!)
-        return result
+        do{
+            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves)
+            let result = json as! NSDictionary
+            let keyBook = "ISBN:" + isbn
+            let valuesBook = result[keyBook] as! NSDictionary
+            // let authors = result["authors"] as! NSArray
+            // let pages = valuesBook["number_of_pages"] as! NSInteger
+            let title = valuesBook["title"] as! NSString
+            print(title)
+            // print(pages)
+            // let bookResult = Book(authors: authors as! Array<String>, title: title, pages: pages)
+        }catch _ {
+            print("Error")
+        }
+        
+    }
+    
+    func renderResults(book: Book){
+        titleLabel.text = book.title
+        authorLabel.text = book.getAuthors()
+        pagesLabel.text = String(book.pages)
+        if book.cover != nil{
+            coverLabel.text = book.cover!
+        }
     }
 
 }
