@@ -10,14 +10,12 @@ import Foundation
 
 class Book {
     var authors = Array<String>();
-    let title: String
+    var title: String = ""
     var cover: String?
-    let pages: Int
     
-    init(authors:Array<String>, title:String, pages: Int){
-        self.authors = authors
+    init(authors: Array<String>, title: String){
         self.title = title
-        self.pages = pages
+        self.authors = authors
     }
     
     func setCoverPage(coverPage: String){

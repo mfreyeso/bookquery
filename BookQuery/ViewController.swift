@@ -13,8 +13,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var isbnBook: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var pagesLabel: UILabel!
-    @IBOutlet weak var coverLabel: UILabel!
     
     
     @IBAction func textFieldDoneEditing(sender:UITextField){
@@ -66,7 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func queryBookDetails(isbn:String){
         let urls = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:" + isbn
         let url = NSURL(string: urls)
-        let data:NSData? = NSData(contentsOfURL: url!)
+        let data = NSData(contentsOfURL: url!)
         do{
             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves)
             let result = json as! NSDictionary
@@ -74,9 +72,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let valuesBook = result[keyBook] as! NSDictionary
             // let authors = result["authors"] as! NSArray
             // let pages = valuesBook["number_of_pages"] as! NSInteger
-            let title = valuesBook["title"] as! NSString
-            print(title)
-            // print(pages)
+            let title = valuesBook["title"] as! NSString as String
+            titleLabel.text = title
             // let bookResult = Book(authors: authors as! Array<String>, title: title, pages: pages)
         }catch _ {
             print("Error")
@@ -87,10 +84,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func renderResults(book: Book){
         titleLabel.text = book.title
         authorLabel.text = book.getAuthors()
-        pagesLabel.text = String(book.pages)
-        if book.cover != nil{
-            coverLabel.text = book.cover!
-        }
+//        if book.cover != nil{
+//            coverLabel.text = book.cover!
+//        }
     }
 
 }

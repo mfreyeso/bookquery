@@ -76,30 +76,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cover Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="531-as-mgt">
-                                <rect key="frame" x="48" y="455" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-zh-Rj7">
-                                <rect key="frame" x="48" y="473" width="274" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number Pages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq2-GG-zIA">
-                                <rect key="frame" x="48" y="398" width="116" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13Q-3e-iq0">
-                                <rect key="frame" x="48" y="415" width="274" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-3k-Zzl">
                                 <rect key="frame" x="20" y="233" width="51" height="22"/>
                                 <constraints>
@@ -113,8 +89,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GWn-7e-41w" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="102" id="2ov-Dv-lDu"/>
-                            <constraint firstItem="13Q-3e-iq0" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="28" id="31L-Ze-syb"/>
-                            <constraint firstItem="rq2-GG-zIA" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="28" id="4RR-Ho-Zbn"/>
                             <constraint firstItem="MUH-rM-oOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CmX-LU-K3D"/>
                             <constraint firstItem="Iwd-Ok-fXS" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="30" id="ESm-zF-3Qw"/>
                             <constraint firstItem="MUH-rM-oOK" firstAttribute="top" secondItem="AKY-NI-eaE" secondAttribute="bottom" constant="22" id="FD5-Mn-S42"/>
@@ -122,30 +96,22 @@
                             <constraint firstItem="jj6-gT-Bsi" firstAttribute="top" secondItem="Iwd-Ok-fXS" secondAttribute="bottom" constant="17" id="R8h-QP-9hP"/>
                             <constraint firstItem="GWn-7e-41w" firstAttribute="centerX" secondItem="MUH-rM-oOK" secondAttribute="centerX" id="T6W-hz-I6e"/>
                             <constraint firstItem="jj6-gT-Bsi" firstAttribute="top" secondItem="yrG-rP-Rh1" secondAttribute="bottom" constant="35" id="TeN-oc-oFv"/>
-                            <constraint firstItem="531-as-mgt" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="28" id="TwJ-MO-BbL"/>
                             <constraint firstItem="AKY-NI-eaE" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-102" id="UaJ-ZX-24m"/>
                             <constraint firstItem="AKY-NI-eaE" firstAttribute="leading" secondItem="MUH-rM-oOK" secondAttribute="leading" constant="-30" id="V8N-BI-ayl"/>
                             <constraint firstItem="MUH-rM-oOK" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="30" id="W6b-Ln-gff"/>
-                            <constraint firstItem="TZc-zh-Rj7" firstAttribute="top" secondItem="13Q-3e-iq0" secondAttribute="bottom" constant="37" id="WGj-Mv-U2S"/>
                             <constraint firstItem="EYt-2x-8dF" firstAttribute="top" secondItem="Iwd-Ok-fXS" secondAttribute="bottom" constant="34" id="Wv9-t3-2ks"/>
-                            <constraint firstItem="rq2-GG-zIA" firstAttribute="top" secondItem="EYt-2x-8dF" secondAttribute="bottom" constant="21" id="Xyj-Qj-5z7"/>
-                            <constraint firstItem="531-as-mgt" firstAttribute="top" secondItem="13Q-3e-iq0" secondAttribute="bottom" constant="19" id="Zr1-SQ-eT9"/>
-                            <constraint firstItem="531-as-mgt" firstAttribute="top" secondItem="rq2-GG-zIA" secondAttribute="bottom" constant="36" id="aQ6-5D-vaz"/>
+                            <constraint firstItem="GWn-7e-41w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="61" id="XMi-2y-bQU"/>
                             <constraint firstItem="MUH-rM-oOK" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="30" id="bdQ-u1-hb8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EYt-2x-8dF" secondAttribute="trailing" constant="37" id="csr-s8-VzA"/>
-                            <constraint firstItem="13Q-3e-iq0" firstAttribute="trailing" secondItem="TZc-zh-Rj7" secondAttribute="trailing" id="gJh-fj-pjg"/>
-                            <constraint firstItem="13Q-3e-iq0" firstAttribute="trailing" secondItem="EYt-2x-8dF" secondAttribute="trailing" id="gKX-Et-UpS"/>
                             <constraint firstItem="MUH-rM-oOK" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-72" id="hew-ju-ayj"/>
                             <constraint firstItem="GWn-7e-41w" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="102" id="j0y-RD-GY4"/>
-                            <constraint firstItem="GWn-7e-41w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="61" id="nv8-o6-tZX"/>
                             <constraint firstItem="EYt-2x-8dF" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="28" id="o7O-8o-Q2b"/>
-                            <constraint firstItem="AKY-NI-eaE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="o7d-4r-0J1"/>
                             <constraint firstItem="yrG-rP-Rh1" firstAttribute="top" secondItem="6r7-3k-Zzl" secondAttribute="bottom" constant="28" id="oBy-kl-c8J"/>
-                            <constraint firstItem="TZc-zh-Rj7" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="28" id="p00-Xd-W87"/>
                             <constraint firstItem="MUH-rM-oOK" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-72" id="p2P-Xu-XRN"/>
                             <constraint firstItem="6r7-3k-Zzl" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" id="pJJ-Jd-S6G"/>
                             <constraint firstItem="6r7-3k-Zzl" firstAttribute="top" secondItem="MUH-rM-oOK" secondAttribute="bottom" constant="40" id="r90-OU-Oyz"/>
                             <constraint firstItem="6r7-3k-Zzl" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" id="tdy-LC-cfK"/>
+                            <constraint firstItem="AKY-NI-eaE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="uXI-RT-k15"/>
                             <constraint firstItem="AKY-NI-eaE" firstAttribute="leading" secondItem="GWn-7e-41w" secondAttribute="leading" constant="-102" id="uip-bO-LeV"/>
                             <constraint firstItem="Iwd-Ok-fXS" firstAttribute="trailing" secondItem="MUH-rM-oOK" secondAttribute="trailing" id="xde-r6-ZdV"/>
                             <constraint firstItem="jj6-gT-Bsi" firstAttribute="leading" secondItem="AKY-NI-eaE" secondAttribute="leading" constant="28" id="ycY-3R-z6v"/>
@@ -158,9 +124,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="authorLabel" destination="EYt-2x-8dF" id="hfU-7z-KTO"/>
-                        <outlet property="coverLabel" destination="TZc-zh-Rj7" id="YGO-7m-1Qd"/>
                         <outlet property="isbnBook" destination="MUH-rM-oOK" id="4Gf-xA-EYx"/>
-                        <outlet property="pagesLabel" destination="13Q-3e-iq0" id="3dV-oj-hex"/>
                         <outlet property="titleLabel" destination="Iwd-Ok-fXS" id="0IB-BN-xkt"/>
                     </connections>
                 </viewController>
