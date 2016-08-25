@@ -27,9 +27,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let isbn :String = isbnBook.text!
         if isbn != "" {
             if Reachability.isConnectedToNetwork() {
-                // let BookResult: Book = queryBookDetails(isbn)
                 queryBookDetails(isbn)
-                //renderResults(BookResult)
             }else{
                 let alertController = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
                 let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
@@ -71,7 +69,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let keyBook = "ISBN:" + isbn
             let valuesBook = result[keyBook] as! NSDictionary
             // let authors = result["authors"] as! NSArray
-            // let pages = valuesBook["number_of_pages"] as! NSInteger
+            
             let title = valuesBook["title"] as! NSString as String
             titleLabel.text = title
             // let bookResult = Book(authors: authors as! Array<String>, title: title, pages: pages)
@@ -79,14 +77,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("Error")
         }
         
-    }
-    
-    func renderResults(book: Book){
-        titleLabel.text = book.title
-        authorLabel.text = book.getAuthors()
-//        if book.cover != nil{
-//            coverLabel.text = book.cover!
-//        }
     }
 
 }
