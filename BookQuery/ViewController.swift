@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var isbnBook: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var imageCover: UIImageView!
     
     
     @IBAction func textFieldDoneEditing(sender:UITextField){
@@ -68,14 +69,46 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let result = json as! NSDictionary
             let keyBook = "ISBN:" + isbn
             let valuesBook = result[keyBook] as! NSDictionary
-            // let authors = result["authors"] as! NSArray
-            
-            let title = valuesBook["title"] as! NSString as String
-            titleLabel.text = title
-            // let bookResult = Book(authors: authors as! Array<String>, title: title, pages: pages)
+            renderDetails(valuesBook)
         }catch _ {
             print("Error")
         }
+        
+    }
+    
+    func renderDetails(data: NSDictionary){
+        
+        var authorsValue = "The data not contain authors"
+        var title :String = "The data not contain title"
+        let cover :String?
+        
+        if (data.valueForKey("authors") != nil) {
+            authorsValue = ""
+            let authors = data["authors"] as! NSArray as Array
+            for var author in authors{
+                author = author as! NSDictionary
+                let name = author["name"] as! NSString as String
+                authorsValue = authorsValue + name + " "
+            }
+        }
+        
+        if (data.valueForKey("title") != nil){
+           title = data["title"] as! NSString as String
+        }
+        
+        if (data.valueForKey("cover") != nil){
+            let coverDict = data["cover"] as! NSDictionary
+            cover = coverDict["large"] as! NSString as String
+            
+            let url = NSURL(string: cover!)
+            if let dataImage = NSData(contentsOfURL: url!) {
+                imageCover.image = UIImage(data: dataImage)
+            }
+            
+        }
+        
+        titleLabel.text = title
+        authorLabel.text = authorsValue
         
     }
 
